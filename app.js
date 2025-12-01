@@ -16,7 +16,7 @@ const mbImg = document.getElementById('mb-img'); // Mobile main image
 // --- Menu Elements ---
 const menuBtn = document.getElementById("menuBtn");
 const menuCloseBtn = document.querySelector(".menuCloseBtn");
-const menu = document.getElementById("menu");
+const menu = document.querySelector(".menu");
 const main = document.querySelector("main"); // Used for blurring effect
 
 // --- Counter & Cart Elements ---
@@ -180,7 +180,7 @@ thumbnails.forEach((tmb, index) => {
 
 // Open the mobile menu and blur main content
 menuBtn.addEventListener("click", () => {
-  menu.style.transform = "translateX(0)"; // Menu in
+  menu.style.transform = "translateX(1%)"; // Menu in
   main.style.filter = "blur(1em)";
 });
 

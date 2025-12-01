@@ -7,41 +7,75 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link rel="stylesheet" href="./styles.css" />
   <script src="./app.js" defer></script>
-  <title>Frontend Mentor | E-commerce product page</title>
+    <title>Fall Limited Edition Sneakers | E-commerce product page</title>
 </head>
 
 <body>
-  <header>
+    <header role="banner">
+    
     <div class="headerLeft">
-      <a href="#"><img src="./images/logo.svg" alt="brand logo" /></a>
-      <a href="#">Collections</a>
-      <a href="#">Men</a>
-      <a href="#">Women</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
-    <div class="headerRight">
-      <a href="#"><img src="./images/icon-cart.svg" alt="cart logo" id="cartLogo"/></a>
-      <a href="#"><img src="./images/image-avatar.png" alt="avatar logo" id="avatarLogo"/></a>     
-    </div>
-  </header>
-  <main>
-    <div class="leftTop">
-      <a href="#" id="focusImg"><img src="./images/image-product-1.jpg" alt="" class="bigImg" id="bigImg1" style="display: flex;"/></a>
-      <a href="#" id="focusImg"><img src="./images/image-product-2.jpg" alt="" class="bigImg" id="bigImg2" style="display: none;"/></a>
-      <a href="#" id="focusImg"><img src="./images/image-product-3.jpg" alt="" class="bigImg" id="bigImg3" style="display: none;"/></a>
-      <a href="#" id="focusImg"><img src="./images/image-product-4.jpg" alt="" class="bigImg" id="bigImg4" style="display: none;"/></a>
-      <div class="carousel">
-        <img src="./images/image-product-1-thumbnail.jpg" alt="" class="thumbnail" id="tmbImg1">
-        <img src="./images/image-product-2-thumbnail.jpg" alt="" class="thumbnail" id="tmbImg2">
-        <img src="./images/image-product-3-thumbnail.jpg" alt="" class="thumbnail" id="tmbImg3">
-        <img src="./images/image-product-4-thumbnail.jpg" alt="" class="thumbnail" id="tmbImg4">
+            <button class="menuBtn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+        <img src="./images/icon-menu.svg" alt="" aria-hidden="true"></button>
+
+            <a href="#" aria-label="Sneaker Company Home">
+          <img src="./images/logo.svg" alt="Sneaker Company Logo" />
+      </a>
+
+            <div class="menu" id="main-navigation" role="navigation" aria-label="Primary product links">
+                <button class="menuCloseBtn" aria-label="Close menu">
+          <img src="./images/icon-close.svg" alt="" aria-hidden="true"></button>
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
       </div>
     </div>
 
-    <div class="rightBottom">
+    <div class="headerRight">
+            <span class="cartSpan" id="cartCount" aria-live="polite">0</span>
+      
+            <a href="#" aria-label="View shopping cart">
+          <img src="./images/icon-cart.svg" alt="" id="cartLogo" aria-hidden="true"/>
+      </a>
+      
+            <a href="#" aria-label="User profile settings">
+          <img src="./images/image-avatar.png" alt="User avatar" id="avatarLogo"/>
+      </a> 
+    </div>
+  </header>
+
+    <main role="main">
+        <section class="leftTop" aria-label="Product image gallery">
+                <img src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers - Side view" id="mb-img" style="display: none;"/>
+        
+                <a href="#" role="button" aria-label="Open image 1 in lightbox" aria-controls="lightbox" >
+            <img src="./images/image-product-1.jpg" alt="Fall Limited Edition Sneakers - Side view" class="bigImg" id="bigImg1" style="display: flex;"/>
+        </a>
+        <a href="#" role="button" aria-label="Open image 2 in lightbox">
+            <img src="./images/image-product-2.jpg" alt="Fall Limited Edition Sneakers - Perspective view" class="bigImg" id="bigImg2" style="display: none;"/>
+        </a>
+        <a href="#" role="button" aria-label="Open image 3 in lightbox">
+            <img src="./images/image-product-3.jpg" alt="Fall Limited Edition Sneakers - Sole view" class="bigImg" id="bigImg3" style="display: none;"/>
+        </a>
+        <a href="#" role="button" aria-label="Open image 4 in lightbox">
+            <img src="./images/image-product-4.jpg" alt="Fall Limited Edition Sneakers - Top view" class="bigImg" id="bigImg4" style="display: none;"/>
+        </a>
+        
+            <button id="mb-prev" class="lb-btn" aria-label="Previous product image"></button>
+      <button id="mb-next" class="lb-btn" aria-label="Next product image"></button>
+      
+            <div class="carousel" role="tablist" aria-label="Image selection thumbnails">
+                  <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail 1: Side view" class="thumbnail" id="tmbImg1" role="tab" aria-selected="true" aria-controls="bigImg1">
+        <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail 2: Perspective view" class="thumbnail" id="tmbImg2" role="tab" aria-selected="false" aria-controls="bigImg2">
+        <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail 3: Sole view" class="thumbnail" id="tmbImg3" role="tab" aria-selected="false" aria-controls="bigImg3">
+        <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail 4: Top view" class="thumbnail" id="tmbImg4" role="tab" aria-selected="false" aria-controls="bigImg4">
+      </div>
+    </section>
+
+        <section class="rightBottom" aria-labelledby="product-title">
       <h2>Sneaker Company</h2>
-      <h1>Fall Limited Edition Sneakers</h1>
+      <h1 id="product-title">Fall Limited Edition Sneakers</h1>
 
       <p>
         These low-profile sneakers are your perfect casual wear companion.
@@ -49,31 +83,39 @@
         the weather can offer.
       </p>
 
-      <div id="price">
-        <h3>$125.00</h3>
-        <span>50%</span>
-      </div>
-      
-      
-      <h4>$250.00</h4>
-
-      <div class="btnWrapper">
-        <div id="counter">
-          <a href="#"><img src="./images/icon-minus.svg" alt=" minus icon" id="minusBtn" class="cntBtn"></a>
-          <span id="counterSpan">0</span>
-          <a href="#"><img src="./images/icon-plus.svg" alt="plus icon" id="plusBtn" class="cntBtn"></a>
+      <div id="cmpltPrice">
+        <div id="price">
+                  <h3 aria-label="Current price: 125 dollars">$125.00</h3>
+          <span aria-label="50 percent discount">50%</span>
         </div>
-      <button id="addBtn"><img src="./images/icon-cart.svg" alt="">Add to cart</button>
+        
+              <h4 aria-label="Original price: 250 dollars">$250.00</h4>
+        </div>
+      <div class="btnWrapper">
+                <div id="counter" role="group" aria-label="Quantity selector">
+                    <button class="cntBtn" id="minusBtn" aria-label="Decrease quantity">
+                <img src="./images/icon-minus.svg" alt="" aria-hidden="true"></button>
+                    <span id="counterSpan" aria-live="polite">0</span>
+          <button class="cntBtn" id="plusBtn" aria-label="Increase quantity">
+                <img src="./images/icon-plus.svg" alt="" aria-hidden="true"></button>
+        </div>
+        
+              <button id="addBtn">
+          <img src="./images/icon-cart.svg" alt="" aria-hidden="true">
+          Add to cart
+      </button>
       </div>
-    </div>
+    </section>
   </main>
-  <footer>
+  
+    <footer role="contentinfo">
     <div class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
-        href="#">Your Name Here</a>.
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. Coded by <a
+        href="#">Soeren Timo Voigt</a>.
     </div>
   </footer>
+  
 </body>
 
 </html>

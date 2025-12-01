@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* =========================================
+   1. VARIABLES & SETUP
+   ========================================= */
 :root {
+  /* Colors */
   --orange: hsl(26, 100%, 55%);
   --paleOrange: hsl(25, 100%, 94%);
-
   --Verydarkblue: hsl(220, 13%, 13%);
   --Darkgrayishblue: hsl(219, 9%, 45%);
   --Grayishblue: hsl(220, 14%, 75%);
@@ -12,214 +15,508 @@
   --blackOpacity75: hsl(0, 0%, 0%);
 }
 
-h1{
-    font-size: 3em;
-    margin-top: 0;
-}
-
-h2{
-    color: var(--Darkgrayishblue);
-    text-transform: uppercase;
-    font-size: 1em;
-}
-
-h3{
-    font-size: 2em;
-    margin: 0;
-}
-
-h4{
-    text-decoration: line-through;
-    color: var(--Darkgrayishblue);
-    margin-block: .8em;
-}
-
-p{
-    color: var(--Darkgrayishblue);
-}
-
-img{
-    cursor: pointer;
-}
-
+/* =========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================= */
 * {
   box-sizing: border-box;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
-body{
-    height: 100dvh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+body {
+  min-height: 100dvh;
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-header{
-    display: flex;
-    height: 10%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2em;
-    border-bottom: 1px solid;
-    width: 70%;
-    position: fixed;
-    top: 0;
+button {
+  cursor: pointer;
 }
 
-header a{
-    text-decoration: none;
-    color: var(--Darkgrayishblue);
-    font-weight: 600;
+img {
+  cursor: pointer;
 }
 
-header a img{
-    margin-right: 3em;
+/* =========================================
+   3. TYPOGRAPHY
+   ========================================= */
+h1 {
+  font-size: 3em;
+  margin-top: 0;
 }
 
-.headerLeft{
-    display: flex;
-    gap: 2em;
+h2 {
+  color: var(--Darkgrayishblue);
+  text-transform: uppercase;
+  font-size: 1em;
 }
 
-.headerRight{
-    display: flex;
-    align-items: center;
-    margin-right: -3em;
+h3 {
+  font-size: 2em;
+  margin: 0;
 }
 
-
-
-main{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    gap: 5em;
+h4 {
+  text-decoration: line-through;
+  color: var(--Darkgrayishblue);
+  margin-block: 0.8em;
 }
 
-footer{
-    position: fixed;
-    bottom: 1em;
+p {
+  color: var(--Darkgrayishblue);
 }
 
-button{
-    cursor: pointer;
+/* =========================================
+   4. HEADER & NAVIGATION
+   ========================================= */
+header {
+  display: flex;
+  height: 10%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  border-bottom: 1px solid; /* Note: Consider adding a color here */
+  width: 70%;
+  position: fixed;
+  top: 0;
 }
 
-.leftTop{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
+header a {
+  text-decoration: none;
+  color: var(--Darkgrayishblue);
+  font-weight: 600;
 }
 
-.leftTop img{
-    width: 30em;
-    border-radius: 1em;
+header a img {
+  margin-right: 3em;
 }
 
-.carousel{
-    display: flex;
-    gap: 2em;
+.headerLeft {
+  display: flex;
+  gap: 2em;
 }
 
-.carousel img{
-    width: 6em;
+.headerRight {
+  display: flex;
+  align-items: center;
+  margin-right: -3em;
 }
 
-.thumbnail:hover{
-    border: .2em solid orange;
-    scale: 110%;
+/* Desktop Menu Layout */
+.menu {
+  display: flex;
+  gap: 2em;
 }
 
-.rightBottom{
-    flex: 1;
+/* Mobile specific menu elements hidden by default */
+.menuTg,
+.menuBtn,
+.menuCloseBtn,
+.mblBtn {
+  display: none;
 }
 
-.btnWrapper{
-    display: flex;
-    gap: 1em;
-    padding-top: 1.5em;
+#avatarLogo {
+  width: 3.5em;
 }
 
-#avatarLogo{
-    width: 3.5em;
+.cartSpan {
+  position: relative;
+  font-weight: 900;
+  background-color: none;
+  color: var(--orange);
 }
 
-#addBtn{
-    background-color: var(--orange);
-    border-radius: .6em;
-    border:none;
-    width: 15em;
-    font-size: 1.1em;
-    font-weight: 700;
-    height: 3em;
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    justify-content: center;
+/* =========================================
+   5. MAIN LAYOUT
+   ========================================= */
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  gap: 5em;
 }
 
-#addBtn:hover{
-    background-color: hsla(26, 100%, 36%, 0.84);
+.leftTop {
+  flex: 1;
+  display: block;
 }
 
-#addBtn:active{
-    scale: 99%;
+.rightBottom {
+  flex: 1;
 }
 
-#addBtn img{
-    width: 1.2em;
-    filter: brightness(0);
+/* =========================================
+   6. PRODUCT IMAGES & GALLERY
+   ========================================= */
+/* Main Image */
+.leftTop img {
+  width: 30em;
+  border-radius: 1em;
+  margin-bottom: 2em;
 }
 
-#counter{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 10em;
-    background-color: var(--Lightgrayishblue);
-    border-radius: .6em;
+/* Thumbnail Strip */
+.carousel {
+  display: flex;
+  gap: 2em;
 }
 
-#counter span{
-    font-weight: 700;
+.carousel img {
+  width: 6em;
 }
 
-#minusBtn{
-    transform: translateY(-.25em);
+.thumbnail:hover {
+  border: 0.2em solid orange;
+  scale: 110%;
 }
 
-#price{
-    display: flex;
-    align-items: center;
-    gap: 1em;
+/* Mobile Gallery Controls (Hidden on Desktop) */
+#mb-img,
+#mb-next,
+#mb-prev {
+  display: none;
 }
 
-#price span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: .4em;
-    width: 3.2em;
-    height: 1.5em;
-    background-color: black;
-    color: white;
-    font-weight: 700;
+/* =========================================
+   7. PRODUCT ACTIONS (Price, Cart, Buttons)
+   ========================================= */
+#price {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
-.cntBtn:active{
-    filter: brightness(.8);
+#price span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4em;
+  width: 3.2em;
+  height: 1.5em;
+  background-color: black;
+  color: white;
+  font-weight: 700;
 }
 
+.btnWrapper {
+  display: flex;
+  gap: 1em;
+  padding-top: 1.5em;
+}
+
+/* Quantity Counter */
+#counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 10em;
+  background-color: var(--Lightgrayishblue);
+  border-radius: 0.6em;
+}
+
+#counter span {
+  font-weight: 700;
+}
+
+.cntBtn {
+  border: none;
+  background: none;
+}
+
+.cntBtn:active {
+  filter: brightness(0.8);
+}
+
+/* Add to Cart Button */
+#addBtn {
+  background-color: var(--orange);
+  border-radius: 0.6em;
+  border: none;
+  width: 15em;
+  font-size: 1.1em;
+  font-weight: 700;
+  height: 3em;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+#addBtn:hover {
+  background-color: hsla(26, 100%, 36%, 0.84);
+}
+
+#addBtn:active {
+  scale: 99%;
+}
+
+#addBtn img {
+  width: 1.2em;
+  filter: brightness(0);
+}
+
+/* =========================================
+   8. LIGHTBOX (MODAL)
+   ========================================= */
+#lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+#lb-img {
+  max-width: 50vw;
+  max-height: 50vh;
+  border-radius: 12px;
+}
+
+.thumbnailLb {
+  border-radius: 1em;
+}
+
+.thumbnailLb:hover {
+  border: 0.2em solid orange;
+  scale: 110%;
+}
+
+.upperLb {
+  display: flex;
+}
+
+/* Lightbox Navigation Buttons */
+.lb-btn {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  top: 5.5em;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 20px;
+  user-select: none;
+}
+
+.lb-btn:hover {
+  color: hsl(26, 100%, 55%);
+}
+
+.lb-close {
+  display: flex;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  top: -2em;
+  left: 86%;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px;
+  user-select: none;
+  filter: brightness(100);
+  background: none;
+  background-image: url(./images/icon-close.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#lb-prev,
+#mb-prev {
+  left: 0.5em;
+  background-image: url(./images/icon-previous.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#lb-next,
+#mb-next {
+  left: -0.5em;
+  background-image: url(./images/icon-next.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+footer {
+  position: fixed;
+  bottom: 1em;
+}
 
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* =========================================
+   10. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 450px) {
+  
+  /* --- Header Adjustments --- */
+
+  h1{
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  p{
+    font-size: 1.1em;
+  }
+  header {
+    width: 100%;
+    position: unset;
+    background-color: white;
+    height: 5em;
+    z-index: 1;
+  }
+
+  header a img {
+    margin-right: 0em;
+  }
+
+  .headerLeft {
+    gap: 1em;
+    padding-left: 0.5em;
+  }
+
+  .headerRight {
+    margin: 0;
+  }
+
+  /* Shrink Logo */
+  #avatarLogo {
+    scale: 50%;
+  }
+
+  /* --- Mobile Sidebar Menu --- */
+  /* Remove desktop menu layout */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100dvh;
+    background: white;
+    padding: 5em 1em 1em 1em;
+    
+    /* Animation setup */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 20;
+  }
+
+  .menuBtn {
+    display: block; /* Show hamburger button */
+    border: none;
+    background-color: white;
+  }
+
+  .menuBtn:hover {
+    background-color: rgb(234, 234, 234);
+  }
+
+  .menuCloseBtn {
+    display: block; /* Show close button */
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    border: none;
+    background: none;
+  }
+
+  /* --- Layout Stack --- */
+  main {
+    display: block;
+    width: 100%;
+    padding-bottom: 2em;
+  }
+
+  .leftTop img {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .rightBottom {
+    padding-inline: 1em;
+  }
+
+  #cmpltPrice{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* --- Mobile Product Gallery --- */
+  .igImg,
+  .carousel,
+  footer {
+    display: none;
+  }
+
+  #mb-img {
+    display: flex;
+    width: 100%;
+    max-width: unset;
+    max-height: unset;
+    border-radius: 0;
+  }
+
+  /* Mobile Gallery Navigation Buttons */
+  #mb-prev {
+    display: flex;
+    position: absolute;
+    top: 28vh;
+    left: 2%;
+  }
+
+  #mb-next {
+    display: flex;
+    position: absolute;
+    top: 28vh;
+    left: 85%;
+  }
+
+  /* --- Action Buttons Stack --- */
+  .btnWrapper {
+    flex-direction: column;
+  }
+
+  #counter {
+    width: 100%;
+    height: 3.5em;
+    justify-content: space-between;
+    padding-inline: 1.5em;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
 }

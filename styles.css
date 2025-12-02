@@ -429,6 +429,21 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
+@media (min-width: 1500px) {
+
+  main{
+    width: 40%;
+  }
+
+  .leftTop{
+    scale: 1.2;
+    flex: 2;
+  }
+  .rightBottom{
+    scale: 1.2;
+  }
+}
+
 /* =========================================
    10. MOBILE RESPONSIVENESS
    ========================================= */

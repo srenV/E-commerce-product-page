@@ -131,6 +131,62 @@ header a img {
   color: var(--orange);
 }
 
+#cartOpen{
+  visibility: hidden;
+  position: absolute;
+
+}
+
+#cartOpen.active{
+  visibility: unset;
+  position: absolute;
+  background-color: white;
+  width: 10em;
+  height: fit-content;
+  border-radius: 1em;
+  left: 87.5%;
+  top: 70%;
+  padding: 1em;
+  box-shadow: .2em .2em 1em black;
+}
+
+#cartOpen p {
+  font-size: 1em;
+  color: black;
+}
+
+#innerCartImg{
+  width: 100%;
+  border-radius: .5em;
+}
+
+#cartCloseBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+
+.checkOut{
+  width: 100%;
+  background-color: var(--orange);
+  border-radius: 1em;
+  margin-top: .5em;
+
+}
+
+.cartArticle{
+  display: none;
+  flex-direction: column;
+
+}
+
+#cartEmpty{
+  display: none;
+}
+
+
 /* =========================================
    5. MAIN LAYOUT
    ========================================= */
@@ -519,4 +575,17 @@ footer {
   #addBtn {
     width: 100%;
   }
+
+  #cartOpen.active{
+  visibility: unset;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  border-radius: 1em;
+  left: 0;
+  top: 10%;
+  padding: 1em;
+  box-shadow: .2em .2em 1em black;
+}
 }

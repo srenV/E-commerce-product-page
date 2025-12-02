@@ -35,7 +35,7 @@
     <div class="headerRight">
             <span class="cartSpan" id="cartCount" aria-live="polite">0</span>
       
-            <a href="#" aria-label="View shopping cart">
+            <a href="#" aria-label="View shopping cart" id="cart">
           <img src="./images/icon-cart.svg" alt="" id="cartLogo" aria-hidden="true"/>
       </a>
       
@@ -43,6 +43,29 @@
           <img src="./images/image-avatar.png" alt="User avatar" id="avatarLogo"/>
       </a> 
     </div>
+
+    <div id="cartOpen">
+      <div id="cartEmpty">
+        <p>Nothing to see here</p>
+      </div>
+      <div class="cartArticle" id="cartArticle">
+        <img src="./images/image-product-1-thumbnail.jpg" id="innerCartImg">
+        <p>Fall Limited Edition Sneakers</p>
+        <div class="btnWrapper">
+                <div id="counter" role="group" aria-label="Quantity selector">
+                    <button class="cntBtn" id="minusBtnCart" aria-label="Decrease quantity">
+                <img src="./images/icon-minus.svg" alt="" aria-hidden="true"></button>
+                    <span id="counterSpanCart" aria-live="polite">0</span>
+          <button class="cntBtn" id="plusBtnCart" aria-label="Increase quantity">
+                <img src="./images/icon-plus.svg" alt="" aria-hidden="true"></button>
+        </div>
+        <div>
+          <button class="checkOut" id="deleteCartBtn">Delete</button>
+          <button class="checkOut" id="checkOutbtn">Checkout</button>
+        </div>
+      </div>
+    </div>
+
   </header>
 
     <main role="main">

@@ -23,7 +23,17 @@ const main = document.querySelector("main"); // Used for blurring effect
 const plusBtn = document.getElementById("plusBtn");
 const minusBtn = document.getElementById("minusBtn");
 const counterSpan = document.getElementById("counterSpan");
+const counterSpanCart = document.getElementById("counterSpanCart");
 const cartSpan = document.querySelector(".cartSpan");
+const addToCart = document.getElementById('addBtn')
+const plusBtnCart = document.getElementById("plusBtnCart");
+const minusBtnCart = document.getElementById("minusBtnCart")
+const cart = document.getElementById('cart')
+const cartOpen = document.getElementById('cartOpen')
+const cartCloseBtn = document.getElementById('cartCloseBtn')
+const deleteCartBtn = document.getElementById('deleteCartBtn')
+const cartArticle = document.getElementById('cartArticle')
+const cartEmpty = document.getElementById('cartEmpty')
 
 // --- Mobile Navigation Buttons ---
 const mbPrev = document.getElementById('mb-prev');
@@ -196,13 +206,35 @@ menuCloseBtn.addEventListener("click", () => {
 // Increase quantity and update both item counter and cart count
 plusBtn.addEventListener("click", () => {
   counterSpan.textContent++;
-  cartSpan.textContent++;
 });
 
 // Decrease quantity and cart count (prevents negative values)
 minusBtn.addEventListener("click", () => {
   if (parseInt(counterSpan.textContent) > 0) {
     counterSpan.textContent--;
-    cartSpan.textContent--;
   }
 });
+
+addToCart.addEventListener('click', () =>{
+  cartSpan.textContent = counterSpan.textContent
+  counterSpanCart.textContent = counterSpan.textContent
+  counterSpan.textContent = 0
+})
+
+cart.addEventListener('click', () => {
+  cartOpen.classList.toggle('active');
+  if(counterSpanCart.textContent > 0){
+    cartArticle.style.display = 'flex'
+  }else{
+    cartEmpty.style.display = 'flex'
+  }
+});
+
+
+
+deleteCartBtn.addEventListener('click', () =>{
+  counterSpanCart.textContent = 0
+  cartEmpty.style.display = 'flex'
+  cartArticle.style.display = 'none'
+  
+})

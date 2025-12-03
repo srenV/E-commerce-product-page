@@ -221,20 +221,53 @@ addToCart.addEventListener('click', () =>{
   counterSpan.textContent = 0
 })
 
-cart.addEventListener('click', () => {
+cart.addEventListener('click', (e) => {
   cartOpen.classList.toggle('active');
-  if(counterSpanCart.textContent > 0){
-    cartArticle.style.display = 'flex'
-  }else{
-    cartEmpty.style.display = 'flex'
+
+  if (counterSpanCart.textContent > 0) {
+    cartArticle.style.display = 'flex';
+    cartEmpty.style.display = 'none';
+  } else {
+    cartEmpty.style.display = 'flex';
+    cartArticle.style.display = 'none';
   }
+
+  if(cartOpen.classList.contains('active')){
+    main.style.filter = "blur(1em)";
+    main.style.pointerEvents = 'none'
+  }else{
+    main.style.filter = "blur(0)";
+    main.style.pointerEvents = 'auto'
+  }
+
+  e.stopPropagation(); // verhindert sofortiges Schließen durch Document-Listener
+});
+
+// 2. Klick außerhalb vom Cart schließt ihn
+document.addEventListener('click', (e) => {
+  // Wenn Cart geöffnet ist und Klick NICHT auf CartOpen oder Cart-Button
+  if (cartOpen.classList.contains('active') && 
+      !cartOpen.contains(e.target) && 
+      e.target !== cart) {
+    cartOpen.classList.remove('active');
+    main.style.pointerEvents = 'auto';
+    main.style.filter = "blur(0)";
+  }
+});
+
+// 3. Optional: Klick im Cart selbst soll das Event nicht nach außen propagieren
+cartOpen.addEventListener('click', (e) => {
+  e.stopPropagation();
 });
 
 
 
 deleteCartBtn.addEventListener('click', () =>{
   counterSpanCart.textContent = 0
+  cartSpan.textContent = 0;
   cartEmpty.style.display = 'flex'
   cartArticle.style.display = 'none'
   
 })
+
+

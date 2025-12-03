@@ -141,12 +141,12 @@ header a img {
   visibility: unset;
   position: absolute;
   background-color: white;
-  width: 10em;
+  width: 10rem;
   height: fit-content;
-  border-radius: 1em;
+  border-radius: 1rem;
   left: 87.5%;
   top: 70%;
-  padding: 1em;
+  padding: 1rem;
   box-shadow: .2em .2em 1em black;
 }
 
@@ -184,6 +184,15 @@ header a img {
 
 #cartEmpty{
   display: none;
+}
+
+#deleteCartBtn, #checkOutbtn{
+  height: 3rem;
+}
+
+.cartParagraph{
+  place-self: center;
+  font-weight: 700;
 }
 
 
@@ -547,17 +556,20 @@ footer {
   }
 
   /* Mobile Gallery Navigation Buttons */
+  .mbButtons{
+    position: relative;
+  }
   #mb-prev {
     display: flex;
     position: absolute;
-    top: 28vh;
+    top: -5em;
     left: 2%;
   }
 
   #mb-next {
     display: flex;
     position: absolute;
-    top: 28vh;
+    top: -5em;
     left: 85%;
   }
 
@@ -583,10 +595,10 @@ footer {
   background-color: white;
   width: 100%;
   height: fit-content;
-  border-radius: 1em;
+  border-radius: 0em 0em 1em 1em;
   left: 0;
-  top: 10%;
+  top: 8%;
   padding: 1em;
-  box-shadow: .2em .2em 1em black;
+  box-shadow: none;
 }
 }

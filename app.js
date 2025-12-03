@@ -221,41 +221,48 @@ addToCart.addEventListener('click', () =>{
   counterSpan.textContent = 0
 })
 
+// 1. Cart button click -> toggle cart
 cart.addEventListener('click', (e) => {
+  // Toggle the 'active' class to show/hide the cart
   cartOpen.classList.toggle('active');
 
+  // Show cart content or empty message based on current cart count
   if (counterSpanCart.textContent > 0) {
-    cartArticle.style.display = 'flex';
-    cartEmpty.style.display = 'none';
+    cartArticle.style.display = 'flex';   // show items
+    cartEmpty.style.display = 'none';     // hide "empty cart" message
   } else {
-    cartEmpty.style.display = 'flex';
-    cartArticle.style.display = 'none';
+    cartEmpty.style.display = 'flex';     // show "empty cart" message
+    cartArticle.style.display = 'none';   // hide items
   }
 
-  if(cartOpen.classList.contains('active')){
-    main.style.filter = "blur(1em)";
-    main.style.pointerEvents = 'none'
-  }else{
-    main.style.filter = "blur(0)";
-    main.style.pointerEvents = 'auto'
-  }
+  // Disable pointer events for main content if cart is open
+  main.style.pointerEvents = cartOpen.classList.contains('active') ? 'none' : 'auto';
 
-  e.stopPropagation(); // verhindert sofortiges Schließen durch Document-Listener
+  // Stop the click from bubbling up to the document
+  // Without this, the document click listener would immediately close the cart
+  e.stopPropagation();
 });
 
-// 2. Klick außerhalb vom Cart schließt ihn
+// 2. Click outside the cart closes it
 document.addEventListener('click', (e) => {
-  // Wenn Cart geöffnet ist und Klick NICHT auf CartOpen oder Cart-Button
-  if (cartOpen.classList.contains('active') && 
-      !cartOpen.contains(e.target) && 
-      e.target !== cart) {
+  // Only run if the cart is open AND click is NOT inside the cart AND not on the cart button
+  if (
+    cartOpen.classList.contains('active') && 
+    !cartOpen.contains(e.target) && 
+    e.target !== cart
+  ) {
+    // Close cart
     cartOpen.classList.remove('active');
     main.style.pointerEvents = 'auto';
-    main.style.filter = "blur(0)";
   }
 });
 
-// 3. Optional: Klick im Cart selbst soll das Event nicht nach außen propagieren
+// 3. Click inside the cart should not close it
+cartOpen.addEventListener('click', (e) => {
+  // Stop the event from bubbling up to the document
+  e.stopPropagation();
+});
+
 cartOpen.addEventListener('click', (e) => {
   e.stopPropagation();
 });

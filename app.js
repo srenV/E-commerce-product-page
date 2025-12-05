@@ -215,10 +215,30 @@ minusBtn.addEventListener("click", () => {
   }
 });
 
+// Cart quantity buttons
+
+plusBtnCart.addEventListener("click", () => {
+  counterSpanCart.textContent++;
+});
+
+minusBtnCart.addEventListener("click", () => {
+  if (parseInt(counterSpanCart.textContent) > 0) {
+    counterSpanCart.textContent--;
+  }else{
+    counterSpanCart.textContent = 0
+    cartSpan.textContent = 0;
+    cartEmpty.style.display = 'flex'
+    cartArticle.style.display = 'none'
+  }
+
+});
+
 addToCart.addEventListener('click', () =>{
-  cartSpan.textContent = counterSpan.textContent
-  counterSpanCart.textContent = counterSpan.textContent
-  counterSpan.textContent = 0
+  if(parseInt(counterSpan.textContent) > 0){
+    cartSpan.textContent = counterSpan.textContent
+    counterSpanCart.textContent = counterSpan.textContent
+    counterSpan.textContent = 0
+  }
 })
 
 // 1. Cart button click -> toggle cart

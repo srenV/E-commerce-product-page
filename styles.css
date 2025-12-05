@@ -141,10 +141,10 @@ header a img {
   visibility: unset;
   position: absolute;
   background-color: white;
-  width: 10rem;
+  width: 12rem;
   height: fit-content;
   border-radius: 1rem;
-  left: 87.5%;
+  left: 85%;
   top: 70%;
   padding: 1rem;
   box-shadow: .2em .2em 1em black;
